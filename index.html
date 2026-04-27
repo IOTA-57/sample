@@ -1,19 +1,34 @@
 <!DOCTYPE html>
-<html>
-<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
-<script src="ai.js"></script>
-<script src="app.js"></script>
-<script src="speech.js"></script>
+<html lang="ja">
 <head>
-  <title>授業会話検知AI</title>
   <meta charset="UTF-8">
+  <title>授業会話検知AI</title>
 </head>
 <body>
-<p style="text-align: center;">&nbsp;</p>
-<p style="text-align: center;">&nbsp;</p>
-<p style="text-align: center;"><span id="current-count">　　<span style="font-size: 36pt;">0</span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span></p>
-<p style="text-align: center;">&nbsp;</p>
-<p style="text-align: left;">&nbsp;</p>
-<p style="text-align: left;"><span id="current-count">&nbsp;</span> <button id="btn-toggle-mic">認識開始/停止</button>&nbsp; &nbsp; &nbsp; <button id="btn-exception">取り消し</button></p>
+
+  <p style="text-align: center;">&nbsp;</p>
+  
+  <p style="text-align: center; color: #555;" id="comparison-count">前日比: 0回</p>
+
+  <p style="text-align: center;">
+    <span id="current-count" style="font-size: 36pt;">0</span>
+  </p>
+
+  <p style="text-align: center;">&nbsp;</p>
+
+  <p style="text-align: center;">
+    <button id="btn-toggle-mic" onclick="toggleRecognition()">認識開始/停止</button>
+    &nbsp;&nbsp;&nbsp;
+    <button id="btn-exception">取り消し</button>
+  </p>
+
+  <p style="text-align: center; color: gray;" id="status-log">待機中...</p>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+  <script src="ai.js"></script>
+  <script src="app.js"></script>
+  <script src="speech.js"></script>
+
 </body>
 </html>
